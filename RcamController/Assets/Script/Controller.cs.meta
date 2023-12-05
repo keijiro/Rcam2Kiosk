@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1312eef65e8a644b582fc99bcfd35e59
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _cameraTransform: {instanceID: 0}
+  - _cameraManager: {instanceID: 0}
+  - _cameraBackground: {instanceID: 0}
+  - _occlusionManager: {instanceID: 0}
+  - _statusText: {instanceID: 0}
+  - _ndiResources: {fileID: 11400000, guid: 69304b86950074db7ba8caba75214004, type: 2}
+  - _shader: {fileID: 4800000, guid: 82192f72bca8c4631a5f37bd4fbd11bc, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,26 @@
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Code Editors
+/Rcam*/.idea
+/Rcam*/.vscode
+/Rcam*/*.csproj
+/Rcam*/*.sln
+*.swp
+
+# Unity
+/Rcam*/Library
+/Rcam*/Logs
+/Rcam*/Temp
+/Rcam*/UserSettings
+
+# Xcode
+/RcamController/Xcode
+
+# Visual Scripting
+/RcamVisualizer/Assets/Unity.VisualScripting.Generated/
+/RcamVisualizer/Assets/Unity.VisualScripting.Generated.meta

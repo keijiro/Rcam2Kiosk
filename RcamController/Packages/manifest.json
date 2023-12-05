@@ -1,0 +1,17 @@
+{
+  "scopedRegistries": [
+    {
+      "name": "Keijiro",
+      "url": "https://registry.npmjs.com",
+      "scopes": [
+        "jp.keijiro"
+      ]
+    }
+  ],
+  "dependencies": {
+    "com.unity.xr.arkit": "5.1.1",
+    "jp.keijiro.klak.ndi": "2.1.0",
+    "jp.keijiro.klak.vjui": "1.0.3",
+    "jp.keijiro.rcam2.metadata": "file:../../RcamMetadata"
+  }
+}
