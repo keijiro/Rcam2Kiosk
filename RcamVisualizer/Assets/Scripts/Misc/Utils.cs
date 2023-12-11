@@ -19,13 +19,13 @@ static class Singletons
 
     public static RcamReceiver Receiver
       => _receiver != null ? _receiver :
-           (_receiver = Object.FindObjectOfType<RcamReceiver>());
+           (_receiver = Object.FindFirstObjectByType<RcamReceiver>());
 
     static InputHandle _inputHandle;
 
     public static InputHandle InputHandle
       => _inputHandle != null ? _inputHandle :
-           (_inputHandle = Object.FindObjectOfType<InputHandle>());
+           (_inputHandle = Object.FindFirstObjectByType<InputHandle>());
 }
 
 static class ProjectionUtil
