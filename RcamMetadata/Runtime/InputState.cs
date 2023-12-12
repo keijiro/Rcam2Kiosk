@@ -14,7 +14,7 @@ public unsafe struct InputState
 
     fixed byte Buttons[2];
     fixed byte Toggles[2];
-    fixed byte Knobs[32];
+    fixed byte Knobs[16];
 
     #endregion
 

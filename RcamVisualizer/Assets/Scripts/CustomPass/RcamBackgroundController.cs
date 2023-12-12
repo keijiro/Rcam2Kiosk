@@ -12,8 +12,8 @@ public sealed class RcamBackgroundController : MonoBehaviour
     public int PassNumber => EffectNumber;
     public Material SharedMaterial => UpdateMaterial();
 
-    public bool BackFill { get; set; }
-    public bool FrontFill { get; set; }
+    public bool BackFill { get; set; } = true;
+    public bool FrontFill { get; set; } = true;
     public int EffectNumber { get; set; }
     public float EffectDirection { get; set; }
 
