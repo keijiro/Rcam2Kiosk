@@ -1445,7 +1445,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1489478899}
-  _isOn: 1
+  _isOn: 0
   _graphic: {fileID: 1885812737}
   _onValueChanged:
     m_PersistentCalls:
