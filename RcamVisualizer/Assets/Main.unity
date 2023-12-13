@@ -2768,7 +2768,7 @@ GameObject:
   - component: {fileID: 969529210}
   - component: {fileID: 969529209}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Emoji
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2873,9 +2873,9 @@ VisualEffect:
       - m_Value: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
         m_Name: Mesh
         m_Overridden: 1
-      - m_Value: {fileID: 2800000, guid: 1f0cbe2cc5a43aa4fb0e58318abde15c, type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Texture
-        m_Overridden: 1
+        m_Overridden: 0
     m_Bool:
       m_Array: []
 --- !u!1 &997179733

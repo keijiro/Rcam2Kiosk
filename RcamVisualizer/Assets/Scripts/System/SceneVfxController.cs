@@ -49,7 +49,7 @@ public sealed class SceneVfxController : MonoBehaviour
             if (vfx == null) continue;
             var x = vfx.GetFloat(PropertyID.Throttle);
             var dir = (i == _fgVfxIndex) ? 1 : -1;
-            x = Mathf.Clamp01(x + dir * 0.5f * Time.deltaTime);
+            x = Mathf.Clamp01(x + dir * Time.deltaTime);
             vfx.SetFloat(PropertyID.Throttle, x);
         }
 
@@ -67,7 +67,7 @@ public sealed class SceneVfxController : MonoBehaviour
             if (vfx == null) continue;
             var x = vfx.GetFloat(PropertyID.Throttle);
             var dir = Input.GetToggle(i) ? 1 : -1;
-            x = Mathf.Clamp01(x + dir * 0.5f * Time.deltaTime);
+            x = Mathf.Clamp01(x + dir * Time.deltaTime);
             vfx.SetFloat(PropertyID.Throttle, x);
         }
 
