@@ -10,7 +10,6 @@
   ],
   "dependencies": {
     "com.unity.render-pipelines.high-definition": "16.0.4",
-    "jp.keijiro.kino.post-processing": "2.1.15",
     "jp.keijiro.klak.lineargradient": "1.0.2",
     "jp.keijiro.klak.motion": "1.1.0",
     "jp.keijiro.klak.ndi": "2.1.0",
