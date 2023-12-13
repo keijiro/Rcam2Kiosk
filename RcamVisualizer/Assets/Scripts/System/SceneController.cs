@@ -36,6 +36,7 @@ public sealed class SceneController : MonoBehaviour
     void Update()
     {
         // Selection by the foreground VFX button
+        var prevFgVfxIndex = _fgVfxIndex;
         for (var i = 0; i < ForegroundVfx.Length; i++)
             if (_input.GetButton(i)) _fgVfxIndex = i;
 
@@ -50,6 +51,14 @@ public sealed class SceneController : MonoBehaviour
             vfx.SetFloat(PropertyID.Throttle, x);
         }
 
+        // Special foreground effect: Posterize (button 6)
+        if (prevFgVfxIndex != _fgVfxIndex)
+        {
+            var recolor = FindFirstObjectByType<RcamRecolorController>();
+            recolor.FrontFill = (_fgVfxIndex == 6);
+            recolor.ShuffleColors();
+        }
+
         // Background VFX throttling
         for (var i = 0; i < BackgroundVfx.Length; i++)
         {
@@ -60,6 +69,10 @@ public sealed class SceneController : MonoBehaviour
             x = Mathf.Clamp01(x + dir * 0.5f * Time.deltaTime);
             vfx.SetFloat(PropertyID.Throttle, x);
         }
+
+        // Special background effect: Voxelize (toggle 2)
+        var bg = FindFirstObjectByType<RcamBackgroundController>();
+        bg.BackFill = !_input.GetToggle(2);
     }
 
     #endregion
