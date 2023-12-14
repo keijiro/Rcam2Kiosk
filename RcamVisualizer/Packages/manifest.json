@@ -11,8 +11,10 @@
   "dependencies": {
     "com.unity.render-pipelines.high-definition": "16.0.4",
     "jp.keijiro.klak.lineargradient": "1.0.2",
+    "jp.keijiro.klak.math": "2.1.0",
     "jp.keijiro.klak.motion": "1.1.0",
     "jp.keijiro.klak.ndi": "2.1.0",
+    "jp.keijiro.metatex": "1.0.4",
     "jp.keijiro.metawire": "2.0.0",
     "jp.keijiro.noiseshader": "2.0.0",
     "jp.keijiro.rcam2.metadata": "file:../../RcamMetadata",

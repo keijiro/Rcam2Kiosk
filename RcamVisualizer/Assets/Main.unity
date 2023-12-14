@@ -733,8 +733,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1849138400}
   interpolator: 2
-  positionSpeed: 12
-  rotationSpeed: 12
+  positionSpeed: 2
+  rotationSpeed: 2
 --- !u!1 &384911836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,7 +1119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &529127837
 Transform:
   m_ObjectHideFlags: 0
@@ -1220,7 +1220,7 @@ VisualEffect:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529127836}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Asset: {fileID: 8926484042661614526, guid: 066427ff1609fb64da21eb973071fc62, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
@@ -2953,11 +2953,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Input>k__BackingField: {fileID: 1545935629}
   <Target>k__BackingField: {fileID: 340327591}
+  <Follower>k__BackingField: {fileID: 369462686}
   <LockPoint>k__BackingField: {fileID: 349727204}
-  <Floater>k__BackingField: {fileID: 1849138400}
   <Background>k__BackingField: {fileID: 1774963900}
   <Recolor>k__BackingField: {fileID: 1755712482}
-  <PointCloud>k__BackingField: {fileID: 529127836}
+  <PointCloud>k__BackingField: {fileID: 529127841}
+  <ProjecterVfx>k__BackingField: {fileID: 1676408163}
+  <LineColor>k__BackingField: {r: 0.08392666, g: 0.34685355, b: 0.4339623, a: 1}
 --- !u!1 &1002564349
 GameObject:
   m_ObjectHideFlags: 0
