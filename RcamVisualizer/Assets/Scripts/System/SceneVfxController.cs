@@ -8,19 +8,11 @@ public sealed class SceneVfxController : MonoBehaviour
     #region Editable properties
 
     [field:Space]
-    [field:SerializeField] public InputHandle Input { get; set; }
-    [field:Space]
     [field:SerializeField] public RcamBackgroundController Background { get; set; }
     [field:SerializeField] public RcamRecolorController Recolor { get; set; }
     [field:Space]
     [field:SerializeField] public VisualEffect[] ForegroundVfx { get; set; }
     [field:SerializeField] public VisualEffect[] BackgroundVfx { get; set; }
-
-    #endregion
-
-    #region Private variables
-
-    int _fgVfxIndex;
 
     #endregion
 
@@ -37,10 +29,7 @@ public sealed class SceneVfxController : MonoBehaviour
 
     void Update()
     {
-        // Selection by the foreground VFX button
-        var prevFgVfxIndex = _fgVfxIndex;
-        for (var i = 0; i < ForegroundVfx.Length; i++)
-            if (Input.GetButton(i)) _fgVfxIndex = i;
+        var input = GetComponent<SceneInputAdapter>();
 
         // Foreground VFX throttling
         for (var i = 0; i < ForegroundVfx.Length; i++)
@@ -48,15 +37,15 @@ public sealed class SceneVfxController : MonoBehaviour
             var vfx = ForegroundVfx[i];
             if (vfx == null) continue;
             var x = vfx.GetFloat(PropertyID.Throttle);
-            var dir = (i == _fgVfxIndex) ? 1 : -1;
+            var dir = (i == input.ForegroundVfxIndex) ? 1 : -1;
             x = Mathf.Clamp01(x + dir * Time.deltaTime);
             vfx.SetFloat(PropertyID.Throttle, x);
         }
 
         // Special foreground effect: Posterize (button 6)
-        if (prevFgVfxIndex != _fgVfxIndex)
+        if (input.ForegroundVfxChanged)
         {
-            Recolor.FrontFill = (_fgVfxIndex == 6);
+            Recolor.FrontFill = (input.ForegroundVfxIndex == 6);
             Recolor.ShuffleColors();
         }
 
@@ -66,13 +55,13 @@ public sealed class SceneVfxController : MonoBehaviour
             var vfx = BackgroundVfx[i];
             if (vfx == null) continue;
             var x = vfx.GetFloat(PropertyID.Throttle);
-            var dir = Input.GetToggle(i) ? 1 : -1;
+            var dir = input.GetBackgroundVfxToggle(i) ? 1 : -1;
             x = Mathf.Clamp01(x + dir * Time.deltaTime);
             vfx.SetFloat(PropertyID.Throttle, x);
         }
 
         // Special background effect: Voxelize (toggle 2)
-        Background.BackFill = !Input.GetToggle(2);
+        Background.BackFill = !input.GetBackgroundVfxToggle(2);
     }
 
     #endregion

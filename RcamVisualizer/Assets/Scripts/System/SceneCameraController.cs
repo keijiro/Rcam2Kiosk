@@ -9,9 +9,6 @@ public sealed class SceneCameraController : MonoBehaviour
     #region Editable properties
 
     [field:Space]
-    [field:SerializeField] public InputHandle Input { get; set; }
-
-    [field:Space]
     [field:SerializeField] public Transform Target { get; set; }
     [field:SerializeField] public Transform Follower { get; set; }
     [field:SerializeField] public Transform LockPoint { get; set; }
@@ -93,16 +90,15 @@ public sealed class SceneCameraController : MonoBehaviour
 
     void Update()
     {
-        // Toggle input
-        var unlock = Input.GetToggle(3);
+        var input = GetComponent<SceneInputAdapter>();
 
-        if (_locked && unlock)
+        if (_locked && input.ThirdPersonActivated)
         {
             // Unlock action invoked
             _locked = false;
             UnlockCamera();
         }
-        else if (!_locked && !unlock)
+        else if (!_locked && !input.ThirdPersonActivated)
         {
             // Lock action invoked
             _locked = true;
