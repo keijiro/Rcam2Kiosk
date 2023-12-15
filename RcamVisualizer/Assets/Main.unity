@@ -2924,7 +2924,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 103179f33edec4d8dbbcb4fa2007fada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Input>k__BackingField: {fileID: 1545935629}
   <Background>k__BackingField: {fileID: 1774963903}
   <Recolor>k__BackingField: {fileID: 1755712485}
   <ForegroundVfx>k__BackingField:
@@ -2952,7 +2951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e211949362f740f08b9380592283bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Input>k__BackingField: {fileID: 1545935629}
   <Target>k__BackingField: {fileID: 340327591}
   <Follower>k__BackingField: {fileID: 369462686}
   <LockPoint>k__BackingField: {fileID: 349727204}
@@ -2974,6 +2972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Input>k__BackingField: {fileID: 1545935629}
+  <AutoCycleInterval>k__BackingField: 15
 --- !u!1 &1002564349
 GameObject:
   m_ObjectHideFlags: 0
