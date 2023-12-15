@@ -93,21 +93,20 @@ public sealed class SceneCameraController : MonoBehaviour
 
     void Update()
     {
-        // Button input
-        var lockButtonPressed = Input.GetButton(8);
-        var unlockButtonPressed = Input.GetButton(9);
+        // Toggle input
+        var unlock = Input.GetToggle(3);
 
-        if (!_locked && lockButtonPressed)
-        {
-            // Lock action invoked
-            _locked = true;
-            LockCamera();
-        }
-        else if (_locked && unlockButtonPressed)
+        if (_locked && unlock)
         {
             // Unlock action invoked
             _locked = false;
             UnlockCamera();
+        }
+        else if (!_locked && !unlock)
+        {
+            // Lock action invoked
+            _locked = true;
+            LockCamera();
         }
     }
 
