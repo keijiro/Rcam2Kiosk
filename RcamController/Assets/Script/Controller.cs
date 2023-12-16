@@ -62,25 +62,22 @@ sealed class Controller : MonoBehaviour
         return rt;
     }
 
-    System.Collections.IEnumerator ResetSystemCoroutine()
-    {
-        _input.Button15 = true;
-        yield return null;
-        yield return null;
-
-        _input.Button15 = false;
-        yield return null;
-        yield return null;
-
-        SceneManager.LoadScene(0);
-    }
-
     #endregion
 
     #region Public method (UI callback)
 
-    public void ResetSystem()
-      => StartCoroutine(ResetSystemCoroutine());
+    public async void ResetSystem()
+    {
+        _input.Button15 = true;
+        await Awaitable.NextFrameAsync();
+        await Awaitable.NextFrameAsync();
+
+        _input.Button15 = false;
+        await Awaitable.NextFrameAsync();
+        await Awaitable.NextFrameAsync();
+
+        SceneManager.LoadScene(0);
+    }
 
     #endregion
 

@@ -6,8 +6,6 @@ public sealed class SceneInputAdapter : MonoBehaviour
 {
     #region Editable properties
 
-    [field:Space]
-    [field:SerializeField] public InputHandle Input { get; set; }
     [field:SerializeField] public float AutoCycleInterval { get; set; } = 10;
 
     #endregion
@@ -16,11 +14,11 @@ public sealed class SceneInputAdapter : MonoBehaviour
 
     public int ForegroundVfxIndex { get; private set; }
     public bool ForegroundVfxChanged { get; private set; }
-    public bool ThirdPersonActivated => Input.GetToggle(3);
-    public bool AutoCycleActivated => Input.GetToggle(4);
+    public bool ThirdPersonActivated => Singletons.InputHandle.GetToggle(3);
+    public bool AutoCycleActivated => Singletons.InputHandle.GetToggle(4);
 
     public bool GetBackgroundVfxToggle(int index)
-      => Input.GetToggle(index);
+      => Singletons.InputHandle.GetToggle(index);
 
     #endregion
 
@@ -51,7 +49,7 @@ public sealed class SceneInputAdapter : MonoBehaviour
         var prev = ForegroundVfxIndex;
 
         for (var i = 0; i < 8; i++)
-            if (Input.GetButton(i)) ForegroundVfxIndex = i;
+            if (Singletons.InputHandle.GetButton(i)) ForegroundVfxIndex = i;
 
         ForegroundVfxChanged = (ForegroundVfxIndex != prev);
     }
