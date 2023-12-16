@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Rcam2 {
 
@@ -52,6 +53,9 @@ public sealed class SceneInputAdapter : MonoBehaviour
             if (Singletons.InputHandle.GetButton(i)) ForegroundVfxIndex = i;
 
         ForegroundVfxChanged = (ForegroundVfxIndex != prev);
+
+        // Reset button
+        if (Singletons.InputHandle.GetButton(15)) SceneManager.LoadScene(0);
     }
 
     #endregion
