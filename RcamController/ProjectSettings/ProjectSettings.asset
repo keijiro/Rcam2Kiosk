@@ -159,7 +159,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
   applicationIdentifier:
-    iPhone: jp.keijiro.rcam2.kiosk.controller
+    iPhone: jp.keijiro.rcam2kiosk.controller
   buildNumber:
     Bratwurst: 0
     Standalone: 0
